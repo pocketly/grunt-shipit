@@ -1,13 +1,13 @@
 {
-  "name": "grunt-shipit",
-  "version": "0.4.4",
+  "name": "pk-grunt-shipit",
+  "version": "0.4.6",
   "description": "Deployment using grunt.",
   "scripts": {
     "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/neoziro/grunt-shipit.git"
+    "url": "git@gitlab.sazze.com:pk/grunt-shipit.git"
   },
   "keywords": [
     "gruntplugin",
@@ -15,9 +15,15 @@
     "capistrano"
   ],
   "author": "Greg Bergé <berge.greg@gmail.com>",
+  "contributors": [
+    {
+      "name": "Kevin Smithson",
+      "email": "<ksmithson@pocketly.com>"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/neoziro/grunt-shipit/issues"
+    "url": "http://gitlab.sazze.com/pk/grunt-shipit/issues"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -36,5 +42,9 @@
     "rewire": "^2.0.0",
     "sinon": "^1.9.1",
     "sinon-chai": "^2.5.0"
+  },
+
+  "publishConfig": {
+    "registry": "http://npm.sazze.com"
   }
 }
