@@ -22,7 +22,8 @@ module.exports = function (grunt) {
       addRemote,
       fetch,
       checkout,
-      merge
+      merge,
+      initSubmodules
     ], function (err) {
       if (err) return done(err);
       grunt.shipit.emit('fetched');
@@ -161,6 +162,24 @@ module.exports = function (grunt) {
               cb();
             }
           );
+        }
+      );
+    }
+
+    /**
+     * Initialize Submodules if there are any
+     *
+     * @param cb
+     */
+    function initSubmodules(cb) {
+      grunt.log.writeln('Initializing submodules "%s"', grunt.shipit.config.branch);
+      grunt.shipit.local(
+        'git submodule update --init --recursive',
+        { cwd: grunt.shipit.config.workspace },
+        function (err) {
+          if (err) return cb(err);
+          grunt.log.oklns('Initialized Submodules');
+          cb();
         }
       );
     }
